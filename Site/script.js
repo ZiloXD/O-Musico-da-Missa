@@ -154,15 +154,22 @@ function transporCifra(cifra, tomOrigem, tomDestino) {
   );
 }
 
+function destacarAcordes(texto) {
+  return texto.replace(
+    /(^|[\s(])([A-G](?:#|b)?(?:m|maj|min|dim|aug|sus|add|º|°)?(?:\d+)?(?:M|m)?(?:\(\d+\))?(?:\/[A-G](?:#|b)?)?)(?=$|[\s),.])/g,
+    '$1<span class="acorde">$2</span>'
+  );
+}
+
 function montarRepertorio() {
   const data = document.getElementById("dataMissa").value;
   const celebracao = document.getElementById("celebracao").value;
   const resultado = document.getElementById("resultado");
 
   let html = `
-    <p><strong>Data:</strong> ${data || "Não informada"}</p>
-    <p><strong>Celebração:</strong> ${celebracao || "Não informada"}</p>
-  `;
+  <p><strong>Data:</strong> ${data || "Não informada"}</p>
+  <p><strong>Celebração:</strong> ${celebracao || "Não informada"}</p>
+`;
 
   momentos.forEach((momento, index) => {
     const tituloSelecionado = document.getElementById(`momento-${index}`).value;
@@ -172,16 +179,25 @@ function montarRepertorio() {
       const musica = musicas.find(m => m.titulo === tituloSelecionado);
       const tomFinal = novoTom ? novoTom : musica.tom;
       const cifraFinal = transporCifra(musica.cifra, musica.tom, tomFinal);
+      const cifraFormatada = destacarAcordes(cifraFinal);
 
       html += `
-        <div class="musica-final">
-          <h3>${momento}</h3>
-          <p><strong>${musica.titulo}</strong> - Tom ${tomFinal}</p>
-          <pre>${cifraFinal}</pre>
-        </div>
-      `;
+  <section class="pagina-musica">
+    <h3>${momento}</h3>
+    <p><strong>${musica.titulo}</strong> - Tom ${tomFinal}</p>
+
+    <div class="cifra-duas-colunas">
+      <pre>${cifraFormatada}</pre>
+    </div>
+  </section>
+`;
     }
   });
+
+html += `
+    </div>
+  </div>
+`;
 
   resultado.innerHTML = html;
   document.getElementById("resultadoCard").style.display = "block";

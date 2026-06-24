@@ -90,35 +90,6 @@ select {
   width: 100%;
 }
 
-.musica-final {
-  border-top: 1px solid #ddd;
-  padding-top: 18px;
-  margin-top: 18px;
-}
-
-pre {
-  white-space: pre-wrap;
-  background: #f4f4f4;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-@media print {
-  .hero,
-  .botao,
-  .card:not(.resultado) {
-    display: none;
-  }
-
-  body {
-    background: white;
-  }
-
-  .card {
-    box-shadow: none;
-  }
-}
-
 .linha-musica {
   display: flex;
   align-items: center;
@@ -158,4 +129,118 @@ pre {
   font-weight: bold;
   font-size: 18px;
   color: #7b2d26;
+}
+
+.resultado {
+  background: white;
+}
+
+.pagina-musica {
+  background: white;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.pagina-musica h3 {
+  color: #7b2d26;
+  margin-bottom: 5px;
+}
+
+.cifra-duas-colunas {
+  height: auto;
+}
+
+.cifra-duas-colunas pre {
+  white-space: pre-wrap;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 0;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.acorde {
+  color: #7b2d26;
+  font-weight: bold;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  .hero,
+  .card:not(.resultado),
+  .botao {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .resultado {
+    display: block !important;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .resultado h2 {
+    display: none;
+  }
+
+  .pagina-musica {
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    height: calc(297mm - 24mm);
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border-top: none;
+  }
+
+  .pagina-musica:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .pagina-musica h3 {
+    margin: 0 0 4mm;
+    font-size: 18px;
+    color: #7b2d26;
+  }
+
+  .pagina-musica p {
+    margin: 0 0 4mm;
+    font-size: 13px;
+  }
+
+  .cifra-duas-colunas {
+    column-count: 2;
+    column-gap: 10mm;
+    column-fill: auto;
+    height: 250mm;
+  }
+
+  .cifra-duas-colunas pre {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 11px;
+    line-height: 1.25;
+  }
 }
