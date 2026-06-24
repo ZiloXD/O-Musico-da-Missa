@@ -15,6 +15,8 @@ const momentos = [
 
 const notas = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
 
+const tonsSelecionados = {};
+
 function carregarMomentos() {
   const lista = document.getElementById("listaMomentos");
 
@@ -30,44 +32,23 @@ function carregarMomentos() {
       <label>${index + 1}. ${momento}</label>
 
       <div class="linha-musica">
-
         <div class="campo-musica">
           <select id="momento-${index}" onchange="atualizarTomOriginal(${index})">
             <option value="">Selecione uma música</option>
 
             ${musicasDoMomento.map(musica => `
-              <option
-                value="${musica.titulo}"
-                data-tom="${musica.tom}">
+              <option value="${musica.titulo}" data-tom="${musica.tom}">
                 ${musica.titulo}
               </option>
             `).join("")}
-
           </select>
         </div>
 
         <div class="controle-tom">
-          <button
-            type="button"
-            class="btn-tom"
-            onclick="alterarTom(${index}, -1)">
-            −
-          </button>
-
-          <span
-            class="tom-atual"
-            id="tom-${index}">
-            -
-          </span>
-
-          <button
-            type="button"
-            class="btn-tom"
-            onclick="alterarTom(${index}, 1)">
-            +
-          </button>
+          <button type="button" class="btn-tom" onclick="alterarTom(${index}, -1)">−</button>
+          <span class="tom-atual" id="tom-${index}">-</span>
+          <button type="button" class="btn-tom" onclick="alterarTom(${index}, 1)">+</button>
         </div>
-
       </div>
     `;
 
@@ -75,13 +56,9 @@ function carregarMomentos() {
   });
 }
 
-const tonsSelecionados = {};
-
 function atualizarTomOriginal(index) {
-
   const select = document.getElementById(`momento-${index}`);
   const option = select.options[select.selectedIndex];
-
   const tomOriginal = option.getAttribute("data-tom");
 
   if (tomOriginal) {
@@ -94,44 +71,50 @@ function atualizarTomOriginal(index) {
 }
 
 function alterarTom(index, direcao) {
-
   let tomAtual = tonsSelecionados[index];
 
   if (!tomAtual) return;
 
   let posicao = notas.indexOf(tomAtual);
-
   posicao += direcao;
 
-  if (posicao < 0) {
-    posicao = notas.length - 1;
-  }
-
-  if (posicao >= notas.length) {
-    posicao = 0;
-  }
+  if (posicao < 0) posicao = notas.length - 1;
+  if (posicao >= notas.length) posicao = 0;
 
   tonsSelecionados[index] = notas[posicao];
-
-  document.getElementById(`tom-${index}`).innerText =
-    notas[posicao];
+  document.getElementById(`tom-${index}`).innerText = notas[posicao];
 }
 
 function transporNota(nota, diferenca) {
   const indice = notas.indexOf(nota);
 
-  if (indice === -1) {
-    return nota;
-  }
+  if (indice === -1) return nota;
 
   const novoIndice = (indice + diferenca + 12) % 12;
   return notas[novoIndice];
 }
 
 function transporAcorde(acorde, diferenca) {
-  return acorde.replace(/[A-G](#|b)?/g, nota => {
-    return transporNota(nota, diferenca);
-  });
+  const partes = acorde.match(/^([A-G](?:#|b)?)(.*?)(?:\/([A-G](?:#|b)?))?$/);
+
+  if (!partes) return acorde;
+
+  const notaPrincipal = partes[1];
+  const complemento = partes[2] || "";
+  const notaBaixo = partes[3];
+
+  const novaNotaPrincipal = transporNota(notaPrincipal, diferenca);
+
+  if (notaBaixo) {
+    const novaNotaBaixo = transporNota(notaBaixo, diferenca);
+    return `${novaNotaPrincipal}${complemento}/${novaNotaBaixo}`;
+  }
+
+  return `${novaNotaPrincipal}${complemento}`;
+}
+
+function ehAcorde(token) {
+  return /^[A-G](?:#|b)?(?:m|maj|min|dim|aug|sus|add|º|°)?(?:\d+)?(?:M|m)?(?:\(\d+\))?(?:\/[A-G](?:#|b)?)?$/.test(token);
 }
 
 function transporCifra(cifra, tomOrigem, tomDestino) {
@@ -149,15 +132,27 @@ function transporCifra(cifra, tomOrigem, tomDestino) {
   const diferenca = destino - origem;
 
   return cifra.replace(
-    /\b[A-G](#|b)?(m|maj|maj7|m7|7|9|11|13|sus|sus4|dim|aug|°)?(\/[A-G](#|b)?)?\b/g,
-    acorde => transporAcorde(acorde, diferenca)
+    /(^|[\s(])([A-G](?:#|b)?[^\s]*)/g,
+    (match, antes, possivelAcorde) => {
+      if (ehAcorde(possivelAcorde)) {
+        return antes + transporAcorde(possivelAcorde, diferenca);
+      }
+
+      return match;
+    }
   );
 }
 
 function destacarAcordes(texto) {
   return texto.replace(
-    /(^|[\s(])([A-G](?:#|b)?(?:m|maj|min|dim|aug|sus|add|º|°)?(?:\d+)?(?:M|m)?(?:\(\d+\))?(?:\/[A-G](?:#|b)?)?)(?=$|[\s),.])/g,
-    '$1<span class="acorde">$2</span>'
+    /(^|[\s(])([A-G](?:#|b)?[^\s]*)/g,
+    (match, antes, possivelAcorde) => {
+      if (ehAcorde(possivelAcorde)) {
+        return `${antes}<span class="acorde">${possivelAcorde}</span>`;
+      }
+
+      return match;
+    }
   );
 }
 
@@ -167,14 +162,19 @@ function montarRepertorio() {
   const resultado = document.getElementById("resultado");
 
   let html = `
-  <p><strong>Data:</strong> ${data || "Não informada"}</p>
-  <p><strong>Celebração:</strong> ${celebracao || "Não informada"}</p>
+  <section class="capa-repertorio">
+    <div>
+      <h1>Repertório da Missa</h1>
+      <h2>${celebracao || "Celebração não informada"}</h2>
+      <p>${data || "Data não informada"}</p>
+    </div>
+  </section>
 `;
 
   momentos.forEach((momento, index) => {
     const tituloSelecionado = document.getElementById(`momento-${index}`).value;
     const novoTom = tonsSelecionados[index];
-    
+
     if (tituloSelecionado) {
       const musica = musicas.find(m => m.titulo === tituloSelecionado);
       const tomFinal = novoTom ? novoTom : musica.tom;
@@ -182,22 +182,17 @@ function montarRepertorio() {
       const cifraFormatada = destacarAcordes(cifraFinal);
 
       html += `
-  <section class="pagina-musica">
-    <h3>${momento}</h3>
-    <p><strong>${musica.titulo}</strong> - Tom ${tomFinal}</p>
+        <section class="pagina-musica">
+          <h3>${momento}</h3>
+          <p><strong>${musica.titulo}</strong> - Tom ${tomFinal}</p>
 
-    <div class="cifra-duas-colunas">
-      <pre>${cifraFormatada}</pre>
-    </div>
-  </section>
-`;
+          <div class="cifra-duas-colunas">
+            <pre>${cifraFormatada}</pre>
+          </div>
+        </section>
+      `;
     }
   });
-
-html += `
-    </div>
-  </div>
-`;
 
   resultado.innerHTML = html;
   document.getElementById("resultadoCard").style.display = "block";

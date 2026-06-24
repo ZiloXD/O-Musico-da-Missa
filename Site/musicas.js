@@ -138,6 +138,75 @@ Ele está presente aqui
     `
   },
 
+{
+    titulo: "Do seu Povo Ele é a Força",
+    momento: "Entrada",
+    tom: "A",
+    cifra: 
+    `
+    Bm                  Em 
+Do seu povo ele é a Força,
+F#                Bm 
+Salvação do seu ungido;
+                   F# 
+Salva, Senhor, teu povo
+                   Bm
+Socorre os teus queridos.
+
+                    Em            
+1. O Senhor é minha luz,
+      A          D
+Ele é minha salvação.
+Bm                   F#   
+O que é que eu vou temer?  
+                  Bm
+Deus é minha proteção.
+Em               Bm
+Ele guarda minha vida, 
+F#                   Bm
+Eu não vou ter medo, Não.
+Em               Bm
+Ele guarda minha vida,
+F#                   Bm
+Eu não vou ter medo, não.
+
+Bm                  Em 
+Do seu povo ele é a força,
+F#                Bm 
+Salvação do seu ungido;
+                   F# 
+Salva, Senhor, teu povo
+                   Bm
+Socorre os teus queridos.
+
+                          Em     
+2. Quando os maus vêm avançando,
+     A           D
+Procurando me acuar,
+Bm                F#   
+Desejando ver meu fim,
+              Bm
+Querendo me matar,
+Em           Bm
+Inimigos opressores,
+F#                Bm
+É que vão se liquidar.
+Em           Bm
+Inimigos opressores,
+F#                Bm
+É que vão se liquidar.
+
+Bm                  Em 
+Do seu povo ele é a Força,
+F#                Bm 
+Salvação do seu ungido;
+                   F# 
+Salva, Senhor, teu povo
+                   Bm
+Socorre os teus queridos.
+`
+  },
+
 
 //ATO PENITENCIAL
 

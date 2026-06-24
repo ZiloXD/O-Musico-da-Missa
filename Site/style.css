@@ -153,14 +153,12 @@ select {
 }
 
 .cifra-duas-colunas pre {
-  white-space: pre-wrap;
-  background: #f4f4f4;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 0;
-  font-family: Consolas, monospace;
-  font-size: 14px;
-  line-height: 1.6;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+
+  font-size: 15px;
+  line-height: 1.45;
 }
 
 .acorde {
@@ -197,8 +195,8 @@ select {
     margin: 0;
   }
 
-  .resultado h2 {
-    display: none;
+  .resultado > h2 {
+  display: none;
   }
 
   .pagina-musica {
@@ -240,7 +238,62 @@ select {
     background: transparent;
     padding: 0;
     border-radius: 0;
-    font-size: 11px;
-    line-height: 1.25;
+
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+/*CAPA*/
+
+.capa-repertorio {
+  background: white;
+  padding: 60px 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.capa-repertorio h1 {
+  color: #7b2d26;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.capa-repertorio h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #2d2d2d;
+}
+
+.capa-repertorio p {
+  font-size: 18px;
+  color: #555;
+}
+
+@media print {
+  .capa-repertorio {
+    height: calc(297mm - 24mm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    page-break-after: always;
+    break-after: page;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .capa-repertorio h1 {
+    font-size: 34px;
+  }
+
+  .capa-repertorio h2 {
+    font-size: 24px;
+  }
+
+  .capa-repertorio p {
+    font-size: 16px;
   }
 }
