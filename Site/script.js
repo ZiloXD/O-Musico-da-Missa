@@ -15,54 +15,6 @@ const momentos = [
 
 const notas = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
 
-const musicas = [
-  {
-    titulo: "Senhor, Quem Entrará",
-    momento: "Entrada",
-    tom: "D",
-    cifra: `D        A
-Senhor, quem entrará
-Bm       G
-No santuário pra te louvar`
-  },
-  {
-    titulo: "Glória a Deus nas Alturas",
-    momento: "Glória",
-    tom: "G",
-    cifra: `G        D
-Glória a Deus nas alturas
-Em       C
-E paz na terra aos homens`
-  },
-  {
-    titulo: "Santo",
-    momento: "Santo",
-    tom: "D",
-    cifra: `D        A
-Santo, Santo, Santo
-Bm       G
-Senhor Deus do universo`
-  },
-  {
-    titulo: "Cordeiro de Deus",
-    momento: "Cordeiro",
-    tom: "C",
-    cifra: `C        G
-Cordeiro de Deus
-Am       F
-Que tirais o pecado do mundo`
-  },
-  {
-    titulo: "Pão da Vida",
-    momento: "Comunhão",
-    tom: "G",
-    cifra: `G        D
-Eu sou o pão da vida
-Em       C
-O que vem a mim não terá fome`
-  }
-];
-
 function carregarMomentos() {
   const lista = document.getElementById("listaMomentos");
 
