@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cifras para Missa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Cifras para Missa</h1>
+    <p>Monte rapidamente a sequência de músicas cifradas para a celebração.</p>
+    <a href="#montar" class="botao">Montar músicas da missa</a>
+  </header>
+
+  <main class="container" id="montar">
+    <section class="card">
+      <h2>Dados da celebração</h2>
+
+      <label>Data da missa</label>
+      <input type="date" id="dataMissa" />
+
+      <label>Nome da celebração</label>
+      <input type="text" id="celebracao" placeholder="Ex: 3º Domingo do Advento" />
+    </section>
+
+    <section class="card">
+      <h2>Escolha as músicas</h2>
+      <div id="listaMomentos"></div>
+
+      <button class="botao principal" onclick="montarRepertorio()">
+        Montar Músicas Missa
+      </button>
+    </section>
+
+    <section class="card resultado" id="resultadoCard" style="display: none;">
+      <h2>Repertório da Missa</h2>
+      <div id="resultado"></div>
+
+      <button class="botao" onclick="copiarRepertorio()">Copiar repertório</button>
+      <button class="botao secundario" onclick="window.print()">Imprimir</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
