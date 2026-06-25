@@ -156,6 +156,17 @@ function destacarAcordes(texto) {
   );
 }
 
+function dividirCifraEmPaginas(cifra, linhasPorPagina = 64) {
+  const linhas = cifra.split("\n");
+  const paginas = [];
+
+  for (let i = 0; i < linhas.length; i += linhasPorPagina) {
+    paginas.push(linhas.slice(i, i + linhasPorPagina).join("\n"));
+  }
+
+  return paginas;
+}
+
 function montarRepertorio() {
   const data = document.getElementById("dataMissa").value;
   const celebracao = document.getElementById("celebracao").value;
@@ -181,16 +192,23 @@ function montarRepertorio() {
       const cifraFinal = transporCifra(musica.cifra, musica.tom, tomFinal);
       const cifraFormatada = destacarAcordes(cifraFinal);
 
-      html += `
-        <section class="pagina-musica">
-          <h3>${momento}</h3>
-          <p><strong>${musica.titulo}</strong> - Tom ${tomFinal}</p>
+      const paginasDaCifra = dividirCifraEmPaginas(cifraFinal, 64);
 
-          <div class="cifra-duas-colunas">
-            <pre>${cifraFormatada}</pre>
-          </div>
-        </section>
-      `;
+     paginasDaCifra.forEach((parteDaCifra, paginaIndex) => {
+      const cifraFormatada = destacarAcordes(parteDaCifra);
+     const tituloMomento = paginaIndex === 0 ? momento : `${momento} - continuação`;
+
+  html += `
+    <section class="pagina-musica">
+      <h3>${tituloMomento}</h3>
+      <p><strong>${musica.titulo}</strong> - Tom ${tomFinal}</p>
+
+      <div class="cifra-duas-colunas">
+        <pre>${cifraFormatada}</pre>
+      </div>
+    </section>
+  `;
+});
     }
   });
 

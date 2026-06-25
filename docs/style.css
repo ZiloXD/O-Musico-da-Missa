@@ -156,7 +156,6 @@ select {
   background: transparent;
   padding: 0;
   border-radius: 0;
-
   font-size: 15px;
   line-height: 1.45;
 }
@@ -165,6 +164,35 @@ select {
   color: #7b2d26;
   font-weight: bold;
 }
+
+/* CAPA */
+
+.capa-repertorio {
+  background: white;
+  padding: 60px 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.capa-repertorio h1 {
+  color: #7b2d26;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.capa-repertorio h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #2d2d2d;
+}
+
+.capa-repertorio p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* IMPRESSÃO */
 
 @media print {
   @page {
@@ -196,29 +224,55 @@ select {
   }
 
   .resultado > h2 {
-  display: none;
+    display: none;
   }
 
-  .pagina-musica {
-    page-break-after: always;
-    break-after: page;
-    page-break-inside: avoid;
-    break-inside: avoid;
+  .capa-repertorio {
     height: calc(297mm - 24mm);
     padding: 0;
     margin: 0;
     border-radius: 0;
-    border-top: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    page-break-after: always;
+    break-after: page;
   }
 
-  .pagina-musica:last-child {
-    page-break-after: auto;
-    break-after: auto;
+  .capa-repertorio h1 {
+    font-size: 34px;
+    color: #7b2d26;
   }
 
+  .capa-repertorio h2 {
+    font-size: 65px;
+    color: #2d2d2d;
+  }
+
+  .capa-repertorio p {
+    font-size: 34px;
+    color: #555;
+  }
+
+  .pagina-musica {
+  page-break-before: always;
+  break-before: page;
+  page-break-after: always;
+  break-after: page;
+
+  height: calc(297mm - 24mm);
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border-top: none;
+  overflow: hidden;
+  }
   .pagina-musica h3 {
     margin: 0 0 4mm;
-    font-size: 18px;
+    font-size: 16px;
     color: #7b2d26;
   }
 
@@ -228,72 +282,26 @@ select {
   }
 
   .cifra-duas-colunas {
-    column-count: 2;
-    column-gap: 10mm;
-    column-fill: auto;
-    height: 250mm;
+  column-count: 2;
+  column-gap: 10mm;
+  column-fill: auto;
+  height: 245mm;
+  overflow: hidden;
   }
 
   .cifra-duas-colunas pre {
     background: transparent;
     padding: 0;
     border-radius: 0;
+    margin: 0;
     font-family: "Courier New", monospace;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.4;
     color: #000;
-  }
-}
-
-/*CAPA*/
-
-.capa-repertorio {
-  background: white;
-  padding: 60px 25px;
-  margin-bottom: 30px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.capa-repertorio h1 {
-  color: #7b2d26;
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.capa-repertorio h2 {
-  font-size: 26px;
-  margin-bottom: 12px;
-  color: #2d2d2d;
-}
-
-.capa-repertorio p {
-  font-size: 18px;
-  color: #555;
-}
-
-@media print {
-  .capa-repertorio {
-    height: calc(297mm - 24mm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    page-break-after: always;
-    break-after: page;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
+    white-space: pre-wrap;
   }
 
-  .capa-repertorio h1 {
-    font-size: 34px;
-  }
-
-  .capa-repertorio h2 {
-    font-size: 65px;
-  }
-
-  .capa-repertorio p {
-    font-size: 34px;
+  .acorde {
+    color: #7b2d26 !important;
   }
 }

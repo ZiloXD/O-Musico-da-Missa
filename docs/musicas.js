@@ -218,12 +218,12 @@ Socorre os teus queridos.
     `INTRO: Am F Am 
     
     Am           D
-CONFESSO À DEUS TODO PODEROSO
+Confesso a Deus todo poderoso
          F         C         
-E A VÓS IRMÃOS E IRMÃS 
+E a vós, irmãos e irmãs 
 
 Dm
-QUE  PEQUEI
+Que  pequei
         Am             
 MUITAS VEZES 
 
@@ -244,7 +244,7 @@ MINHA TÃO GRANDE CULPA.
     Dm    G      C        
 E PEÇO A VIRGEM MARIA, 
     F        Dm
-AOS ANJOS E SANTOS.
+Aos anjos e santos.
     Am    F       E7
 E A VÓS IRMÃO E IRMÃS
 
@@ -516,22 +516,28 @@ Daí-nos a vossa paz,  Daí-nos a paz!
 
 D                     Bm
 Vejam: Eu andei pelas vilas
-             Em                    A
+      Em                    A
 Apontei as saídas como o Pai me pediu
- F#                      Bm    Bm/A
+ F#                  Bm    Bm/A
 Portas eu cheguei para abri-las
-               Em  A7              D  Am  D7
+    Em  A7              D  Am  D7
 Eu curei as feridas  como nunca se viu
 
 [Refrão]
 
-         G              A                F#m  Bm
-Por onde formos também nós que brilhe a tua  luz
-         Em            A             G  D
-Fala, Senhor, na nossa voz, em nossa vida
-         G              A            F#m  Bm
-Nosso caminho então conduz, queremos ser  assim
-             Em           A7               D
+    G              A                
+Por onde formos também nós 
+F#m  Bm
+que brilhe a tua  luz
+         Em            A             
+Fala, Senhor, na nossa voz, 
+  G  D
+em nossa vida
+    G              A            
+Nosso caminho então conduz, 
+  F#m  Bm
+queremos ser  assim
+            Em           A7               D
 Que o pão da vida nos revigore em nosso "sim"
 
 [Segunda Parte]
@@ -542,39 +548,51 @@ Vejam: Fiz de novo a leitura
 Das raízes da vida que meu Pai vê melhor
 F#                   Bm    Bm/A
 Luzes acendi com brandura
-                 Em  A7              D   Am  D7
+         Em  A7              D   Am  D7
 Para a ovelha perdida  não medi meu suor
 
 [Refrão]
 
-         G              A                F#m  Bm
-Por onde formos também nós que brilhe a tua  luz
-         Em            A             G  D
-Fala, Senhor, na nossa voz, em nossa vida
-         G              A            F#m  Bm
-Nosso caminho então conduz, queremos ser  assim
-             Em             A7             D
+     G              A               
+Por onde formos também nós 
+F#m              Bm
+que brilhe a tua  luz
+      Em            A             
+Fala, Senhor, na nossa voz, 
+   G  D
+em nossa vida
+    G              A            
+Nosso caminho então conduz, 
+  F#m  Bm
+queremos ser  assim
+         Em             A7             D
 Que o pão da vida nos revigore em nosso "sim"
 
 [Terceira Parte]
 D                     Bm
 Vejam: Procurei bem aqueles
-                 Em                   A
+              Em                   A
 Que ninguém procurava e falei de meu Pai
-F#                         Bm    Bm/A
+F#                       Bm    Bm/A
 Pobres, a esperança que é deles
-                  Em   A7                   D   Am  D7
+             Em   A7                   D   Am  D7
 Eu não quis ser escravo de um poder que retrai
 
 [Refrão]
 
-         G              A                F#m  Bm
-Por onde formos também nós que brilhe a tua  luz
-         Em            A             G  D
-Fala, Senhor, na nossa voz, em nossa vida
-         G              A            F#m  Bm
-Nosso caminho então conduz, queremos ser assim
-             Em        A7                 D
+   G              A                
+Por onde formos também nós 
+F#m          Bm
+que brilhe a tua  luz
+      Em            A             
+Fala, Senhor, na nossa voz, 
+    G  D
+em nossa vida
+    G              A            
+Nosso caminho então conduz, 
+  F#m  Bm
+queremos ser  assim
+         Em        A7                 D
 Que o pão da vida nos revigore em nosso "sim"
 
 [Quarta Parte]
@@ -590,13 +608,17 @@ Dos que temem o novo, qual perigo sem fim
 
 [Refrão]
 
-         G              A                F#m  Bm
+      G              A                F#m  Bm
 Por onde formos também nós que brilhe a tua  luz
-         Em            A             G  D
-Fala, Senhor, na nossa voz, em nossa vida
-         G              A            F#m  Bm
-Nosso caminho então conduz, queremos ser  assim
-             Em        A7                 D
+      Em            A             
+Fala, Senhor, na nossa voz, 
+    G  D
+em nossa vida
+    G              A            
+Nosso caminho então conduz, 
+  F#m  Bm
+queremos ser  assim
+          Em        A7                 D
 Que o pão da vida nos revigore em nosso "sim"
 
 [Quinta Parte]
@@ -607,18 +629,22 @@ Vejam: Eu quebrei as algemas
 Levantei os caídos, do meu Pai fui as mãos
  F#                   Bm   Bm/A
 Laços, recusei os esquemas
-                 Em   A7                     D  Am  D7
+          Em   A7                     D  Am  D7
 Eu não quero oprimidos, quero um povo de irmãos
 
 [Refrão]
 
-         G              A                F#m  Bm
+     G              A                F#m  Bm
 Por onde formos também nós que brilhe a tua  luz
-         Em            A             G  D
-Fala, Senhor, na nossa voz, em nossa vida
-         G              A            F#m  Bm
-Nosso caminho então conduz, queremos ser  assim
-             Em           A7               D
+      Em            A             
+Fala, Senhor, na nossa voz, 
+    G  D
+em nossa vida
+    G              A            
+Nosso caminho então conduz, 
+  F#m  Bm
+queremos ser  assim
+         Em           A7               D
 Que o pão da vida nos revigore em nosso "sim"
 
 [Sexta Parte]
@@ -636,13 +662,18 @@ De juntar os dispersos o meu Pai tem por lei
 
          G              A                F#m  Bm
 Por onde formos também nós que brilhe a tua  luz
-         Em            A             G  D
-Fala, Senhor, na nossa voz, em nossa vida
-         G              A            F#m  Bm
-Nosso caminho então conduz, queremos ser  assim
-             Em           A7               D
-Que o pão da vida nos revigore em nosso "sim"
-    
+         Em            A             
+Fala, Senhor, na nossa voz, 
+  G  D
+em nossa vida
+    G              A            
+Nosso caminho então conduz, 
+  F#m  Bm
+queremos ser  assim
+             Em           A7               
+Que o pão da vida nos revigore 
+        D
+em nosso "sim"    
     `
   },
 
